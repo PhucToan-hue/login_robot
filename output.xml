@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.8 on win32)" generated="2025-04-30T15:21:00.098380" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Tests" source="d:\TPP\chuong4\testrobot\login_tests.robot">
+<kw name="Truy Cập Trang Đăng Nhập" owner="login_keyword" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:00.587162" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_PAGE}</arg>
+<arg>${BROWSER_TYPE}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-30T15:21:00.587162" elapsed="6.323532"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-30T15:21:06.910694" elapsed="0.074691"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="username"]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-30T15:21:06.985385" elapsed="0.872981"/>
+</kw>
+<status status="PASS" start="2025-04-30T15:21:00.587162" elapsed="7.271204"/>
+</kw>
+<test id="s1-t1" name="Đăng Nhập Hợp Lệ" line="9">
+<kw name="Nhập Thông Tin Đăng Nhập" owner="login_keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:07.861899" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<arg>//input[@name="username"]</arg>
+<arg>${tai_khoan}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-30T15:21:07.860880" elapsed="0.282238"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:08.144126" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>//input[@name="password"]</arg>
+<arg>${mat_khau}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-30T15:21:08.144126" elapsed="0.335418"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:08.479544" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-30T15:21:08.479544" elapsed="0.220189"/>
+</kw>
+<arg>Admin</arg>
+<arg>admin123</arg>
+<status status="PASS" start="2025-04-30T15:21:07.860880" elapsed="0.838853"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h6[text()="Dashboard"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-30T15:21:08.704727" elapsed="1.870847"/>
+</kw>
+<status status="PASS" start="2025-04-30T15:21:07.858366" elapsed="2.717208"/>
+</test>
+<test id="s1-t2" name="Đăng Nhập Sai Mật Khẩu" line="13">
+<kw name="Truy Cập Trang Đăng Nhập" owner="login_keyword">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:10.582622" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${LOGIN_PAGE}</arg>
+<arg>${BROWSER_TYPE}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-30T15:21:10.581614" elapsed="4.862266"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-30T15:21:15.444880" elapsed="0.119733"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="username"]</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-30T15:21:15.565609" elapsed="0.492756"/>
+</kw>
+<status status="PASS" start="2025-04-30T15:21:10.579373" elapsed="5.478992"/>
+</kw>
+<kw name="Nhập Thông Tin Đăng Nhập" owner="login_keyword">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:16.061365" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<arg>//input[@name="username"]</arg>
+<arg>${tai_khoan}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-30T15:21:16.060366" elapsed="0.134765"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:16.196130" level="INFO">Typing text 'wrongpass' into text field '//input[@name="password"]'.</msg>
+<arg>//input[@name="password"]</arg>
+<arg>${mat_khau}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-30T15:21:16.195131" elapsed="0.217816"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-30T15:21:16.414464" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-30T15:21:16.412947" elapsed="1.317347"/>
+</kw>
+<arg>Admin</arg>
+<arg>wrongpass</arg>
+<status status="PASS" start="2025-04-30T15:21:16.060366" elapsed="1.669928"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Invalid credentials</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-30T15:21:17.731298" elapsed="0.461685"/>
+</kw>
+<status status="PASS" start="2025-04-30T15:21:10.578377" elapsed="7.615603"/>
+</test>
+<kw name="Đóng Trình Duyệt" owner="login_keyword" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-30T15:21:18.195977" elapsed="2.202693"/>
+</kw>
+<status status="PASS" start="2025-04-30T15:21:18.194976" elapsed="2.203694"/>
+</kw>
+<status status="PASS" start="2025-04-30T15:21:00.117394" elapsed="20.281276"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Tests" id="s1" pass="2" fail="0" skip="0">Login Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
